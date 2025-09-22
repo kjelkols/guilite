@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="guilite",
-    version="0.1.0",
+    version="0.1.1",
     description="A lightweight Python library for simulation and reporting.",
     author="Kjell Kolsaker",
     license="MIT",
