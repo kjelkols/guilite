@@ -1,27 +1,51 @@
+## Kjøre eksempler
+
+Du kan kjøre eksemplene på flere måter:
+
+**1. Fra prosjektroten (anbefalt):**
+```bash
+python -m guilite.examples.run_webapp
+```
+
+**2. Med CLI-kommando (hvis satt opp):**
+```bash
+guilite-demo
+```
+
+**3. Kopier eksempelfilen til ønsket katalog:**
+Kopier f.eks. `guilite/examples/run_webapp.py` til din egen mappe og juster imports til å bruke `guilite.`-stien.
+
+Se README og dokumentasjon for flere detaljer.
 
 # guilite
 
 Et lettvekts Python-bibliotek for simulering, rapportgenerering og webbasert input/output.
 
+
 ## Installasjon
 
-Installer avhengigheter og biblioteket lokalt:
+Installer fra PyPI:
 
+```bash
+pip install guilite
+```
+
+Eller for lokal utvikling:
 ```bash
 pip install .
 ```
 
 ## Grunnleggende bruk
 
-Definer dine egne simulator-klasser ved å arve fra `SimulatorBase` og implementere `run` og `generate_report`.
 
-Eksempel (se også `examples/mysimulator.py`):
+Definer dine egne simulator-klasser ved å arve fra `guilite.reportgenerator.SimulatorBase` og implementere `run` og `generate_report`.
+
+Eksempel (se også `guilite/examples/mysimulator.py`):
 
 ```python
-from typing import Type
 from pydantic import BaseModel, Field
-from reportgenerator.simulatorbase import SimulatorBase
-from reportgenerator.engine import Engine
+from guilite.reportgenerator.simulatorbase import SimulatorBase
+from guilite.reportgenerator.engine import Engine
 
 class MyInput(BaseModel):
 	x: float = Field(1.0, title="X-verdi")
@@ -51,11 +75,12 @@ class MySimulator(SimulatorBase):
 
 ## Starte web-app med egne simulatorer
 
-Se `examples/run_simulator_app.py`:
+
+Se `guilite/examples/run_webapp.py`:
 
 ```python
-from reportgenerator.simulatorapp import SimulatorApp
-from examples.mysimulator import MySimulator1, MySimulator2
+from guilite.reportgenerator.simulatorapp import SimulatorApp
+from guilite.examples.add_and_multiply_simulators import MySimulator1, MySimulator2
 
 if __name__ == "__main__":
 	simulators = {
@@ -68,7 +93,7 @@ if __name__ == "__main__":
 
 Kjør fra prosjektroten:
 ```bash
-python -m examples.run_simulator_app
+python -m guilite.examples.run_webapp
 ```
 
 ## Funksjoner
@@ -79,6 +104,10 @@ python -m examples.run_simulator_app
 
 ## Demo og eksempler
 Se `examples/`-mappen for komplette demoer.
+
+
+## PyPI
+https://pypi.org/project/guilite/
 
 ## Lisens
 MIT License. Se LICENSE.
