@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name="guilite",
     version="0.1.1",
-    description="A lightweight Python library for simulation and reporting.",
+    description="A lightweight, extensible Python library for simulation, reporting, and web-based input/output. Includes automatic web UI, report generation, and support for custom simulators.",
     author="Kjell Kolsaker",
     license="MIT",
     packages=find_packages(include=["guilite*"]),
