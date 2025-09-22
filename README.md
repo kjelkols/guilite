@@ -1,2 +1,2 @@
 # guilite
-A very lightweight GUI library for input-output oriented programs
+A very lightweight GUI library for input-output oriented programs in Python
