@@ -2,8 +2,8 @@
 from typing import Type
 from pydantic import BaseModel, Field
 try:
-	from reportgenerator.simulatorbase import SimulatorBase
-	from reportgenerator.engine import Engine
+	from guilite.reportgenerator.simulatorbase import SimulatorBase
+	from guilite.reportgenerator.engine import Engine
 except ModuleNotFoundError as e:
 	print("\n[FEIL] Kunne ikke importere 'reportgenerator'.\nKjør dette skriptet fra prosjektroten, f.eks. med:\n    python -m examples.mysimulator\neller\n    python -m examples.run_simulator_app\n")
 	raise e

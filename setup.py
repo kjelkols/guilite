@@ -6,8 +6,12 @@ setup(
     description="A lightweight Python library for simulation and reporting.",
     author="Kjell Kolsaker",
     license="MIT",
-    packages=find_packages(include=["app*", "reportgenerator*"]),
+    packages=find_packages(include=["guilite*"]),
     include_package_data=True,
+    package_data={
+        "guilite.app": ["static/*.js", "static/*.css", "templates/*.html"],
+        "guilite.reportgenerator": ["templates/*.html"],
+    },
     python_requires=">=3.8",
     install_requires=[
         "Flask",
