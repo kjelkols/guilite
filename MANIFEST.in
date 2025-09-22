@@ -1,0 +1,15 @@
+include README.md
+recursive-include app *
+recursive-include reportgenerator *
+
+include LICENSE
+include README.md
+include pyproject.toml
+include setup.py
+recursive-include app *.py *.html *.css *.js
+recursive-include app/static *.css *.js
+recursive-include app/templates *.html
+recursive-include reportgenerator *.py *.html
+recursive-include reportgenerator/templates *.html
+global-exclude *.pyc
+global-exclude __pycache__
